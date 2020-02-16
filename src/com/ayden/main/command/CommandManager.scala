@@ -1,15 +1,27 @@
 package com.ayden.main.command
 
+import com.ayden.main.MyMainClass
+import com.ayden.main.chat.SmiteCommand
 import com.ayden.main.command.commands.HelloWorldCommand
+import org.bukkit.{Bukkit, Server}
 import org.bukkit.command.{CommandExecutor, CommandSender}
+import org.bukkit.plugin.PluginManager
 
 object CommandManager extends CommandExecutor {
 
   val commands: List[Command] = List(
-    HelloWorldCommand
+    HelloWorldCommand,
+    KitCommand,
+    SmiteCommand
   )
 
   val commandMap: Map[String, Command] = Map from (commands map { c => (c.name, c) })
+
+  def registerCommands(): Unit = {
+    commandMap foreach { case (name, _) =>
+      MyMainClass.instance.getCommand(name).setExecutor(this)
+    }
+  }
 
   override def onCommand(commandSender: CommandSender, command: org.bukkit.command.Command, s: String, strings: Array[String]): Boolean = {
     import org.bukkit.ChatColor._

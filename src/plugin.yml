@@ -13,3 +13,6 @@ commands:
   hello:
     description: Send you a hello world message.
     usage: /hello world
+  smite:
+    description: Smite a player.
+    usage: /smite [player]

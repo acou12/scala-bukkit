@@ -17,6 +17,7 @@ object ChatHandler extends CommandExecutor with Listener {
   @EventHandler
   def onPlayerChat(event: AsyncPlayerChatEvent): Unit = {
     import ChatColor._
+    import ChatUtil._
     val player = event.getPlayer
     val prefix = {
       if (prefixMap.contains(player.getUniqueId))

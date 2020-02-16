@@ -1,5 +1,8 @@
 package com.ayden.main.command.commands
 
+import java.io.{ByteArrayOutputStream, DataInputStream, DataOutputStream, OutputStream}
+
+import com.ayden.main.MyMainClass
 import com.ayden.main.command.Command
 import org.bukkit.Material
 import org.bukkit.command.CommandSender
@@ -7,8 +10,6 @@ import org.bukkit.inventory.ItemStack
 
 object HelloWorldCommand extends Command {
   override def name: String = "hello"
-
-  override def requirements(): Unit = ()
 
   override def run(sender: CommandSender, args: Array[String]): Unit = {
     import com.ayden.main.command.CommandImplicits._

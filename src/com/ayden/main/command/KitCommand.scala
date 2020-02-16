@@ -2,13 +2,13 @@ package com.ayden.main.command
 
 import org.bukkit.Material
 import org.bukkit.Material._
-import org.bukkit.command.{Command, CommandExecutor, CommandSender}
+import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 
 import scala.collection.immutable.List
 
-object KitCommand extends CommandExecutor {
+object KitCommand extends Command {
 
   private val kitMap: Map[String, Kit] = Map(
     "noob" -> Kit(items = List((Material.WOOD_SWORD, 10))),
@@ -27,7 +27,9 @@ object KitCommand extends CommandExecutor {
     )
   )
 
-  override def onCommand(commandSender: CommandSender, command: Command, s: String, strings: Array[String]): Boolean = {
+  override def name: String = "kit"
+
+  override def run(commandSender: CommandSender, strings: Array[String]): Unit = {
     val kitName = strings(0)
     if (!kitMap.contains(kitName)) {
       throw new Exception("Invalid kit name. Try /kit list")
@@ -46,7 +48,6 @@ object KitCommand extends CommandExecutor {
       ).reverse
     )
     player.getInventory.addItem(kit.items map { case (m, n) => new ItemStack(m, n) }: _*)
-    true
   }
 }
 
