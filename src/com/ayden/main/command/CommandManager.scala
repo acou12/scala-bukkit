@@ -2,7 +2,7 @@ package com.ayden.main.command
 
 import com.ayden.main.MyMainClass
 import com.ayden.main.chat.SmiteCommand
-import com.ayden.main.command.commands.HelloWorldCommand
+import com.ayden.main.command.commands.{HelloWorldCommand, KitCommand}
 import org.bukkit.{Bukkit, Server}
 import org.bukkit.command.{CommandExecutor, CommandSender}
 import org.bukkit.plugin.PluginManager
