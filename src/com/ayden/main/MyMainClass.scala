@@ -1,6 +1,5 @@
 package com.ayden.main
 
-import java.io.{ByteArrayInputStream, ByteArrayOutputStream, DataInputStream, InputStream}
 import java.util
 
 import com.ayden.main.chat.ChatHandler
@@ -32,6 +31,7 @@ class MyMainClass extends JavaPlugin with PluginMessageListener {
 
 object MyMainClass {
   var instance: MyMainClass = _
+
   def getOnlinePlayers: Iterator[Player] = {
     import scala.jdk.CollectionConverters._
     (instance.getServer.getOnlinePlayers: util.Collection[_ <: Player]).asScala.iterator

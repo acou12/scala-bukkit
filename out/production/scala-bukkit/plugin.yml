@@ -1,0 +1,18 @@
+name: Cool plugin
+version: 1.0
+author: nobody
+main: com.ayden.main.MyMainClass
+
+commands:
+  kit:
+    description: Supply a kit.
+    usage: /kit [kit name]
+  prefix:
+    description: Set your chat prefix.
+    usage: /prefix [prefix]
+  hello:
+    description: Send you a hello world message.
+    usage: /hello world
+  smite:
+    description: Smite a player.
+    usage: /smite [player]

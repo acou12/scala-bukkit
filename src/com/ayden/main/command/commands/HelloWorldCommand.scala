@@ -1,24 +1,13 @@
 package com.ayden.main.command.commands
 
-import java.io.{ByteArrayOutputStream, DataInputStream, DataOutputStream, OutputStream}
-
-import com.ayden.main.MyMainClass
-import com.ayden.main.command.Command
-import org.bukkit.Material
+import com.ayden.main.command.{Command, CommandException}
 import org.bukkit.command.CommandSender
-import org.bukkit.inventory.ItemStack
+
 
 object HelloWorldCommand extends Command {
   override def name: String = "hello"
 
   override def run(sender: CommandSender, args: Array[String]): Unit = {
-    import com.ayden.main.command.CommandImplicits._
-    val player = sender.toPlayer
-    args.requireLength_>=(1)
-    if (args(0) != "world")
-      throw new Exception("command must be run with /hello world")
-    player.sendMessage("Hello, World!")
-    player.setVelocity(player.getVelocity.clone.setY(5))
-    player.getInventory.addItem(new ItemStack(Material.APPLE, 64))
+    require(args(0) == "test", CommandException("dude, you can't do that"))
   }
 }

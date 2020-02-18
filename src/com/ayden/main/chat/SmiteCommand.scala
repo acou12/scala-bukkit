@@ -8,8 +8,7 @@ object SmiteCommand extends Command {
   override def name: String = "smite"
 
   override def run(sender: CommandSender, arguments: Array[String]): Unit = {
-    import com.ayden.main.command.CommandImplicits._
-    arguments.requireLength(1)
+    require(arguments.length == 1)
     val target = Bukkit.getPlayer(arguments(0))
     if (target == null) {
       throw new Exception("Player is not online.")

@@ -1,11 +1,12 @@
 package com.ayden.main.command
 
+import java.util.logging.Level
+
 import com.ayden.main.MyMainClass
 import com.ayden.main.chat.SmiteCommand
 import com.ayden.main.command.commands.{HelloWorldCommand, KitCommand}
-import org.bukkit.{Bukkit, Server}
+import org.bukkit.Bukkit
 import org.bukkit.command.{CommandExecutor, CommandSender}
-import org.bukkit.plugin.PluginManager
 
 object CommandManager extends CommandExecutor {
 
@@ -28,13 +29,19 @@ object CommandManager extends CommandExecutor {
     val name = command.getName
     if (!commandMap.contains(name)) {
       commandSender.sendMessage(s"$RED[ERROR]$GRAY Command not yet implemented.")
-      throw new Exception(s"WARNING: $name is not defined in com.ayden.main.command.CommandManager.")
+      Bukkit.getLogger.severe(s"$name is not defined in com.ayden.main.command.CommandManager.")
     }
     val theCommand = commandMap(name)
     try {
       theCommand.run(commandSender, strings)
     } catch {
-      case e: Exception => commandSender.sendMessage(s"$RED[ERROR]$GRAY Command execution failed: ${e.getMessage}")
+      case e: CommandException =>
+        commandSender.sendMessage(s"$RED[ERROR]$GRAY ${e.getMessage}")
+        if (e.showUsage) {
+          commandSender.sendMessage(s"$RED[ERROR]$GRAY Usage: ${command.getUsage}")
+        }
+      case unchecked: Exception =>
+        Bukkit.getLogger.log(Level.SEVERE, unchecked.getMessage, unchecked)
     }
     true
   }
