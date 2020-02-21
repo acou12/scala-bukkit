@@ -4,14 +4,13 @@ import java.util.logging.Level
 
 import com.ayden.main.MyMainClass
 import com.ayden.main.chat.SmiteCommand
-import com.ayden.main.command.commands.{HelloWorldCommand, KitCommand}
+import com.ayden.main.command.commands.KitCommand
 import org.bukkit.Bukkit
 import org.bukkit.command.{CommandExecutor, CommandSender}
 
 object CommandManager extends CommandExecutor {
 
   val commands: List[Command] = List(
-    HelloWorldCommand,
     KitCommand,
     SmiteCommand
   )
