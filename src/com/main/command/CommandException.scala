@@ -1,4 +1,4 @@
-package com.ayden.main.command
+package com.main.command
 
 case class CommandException(message: String, showUsage: Boolean = true) extends Exception
 

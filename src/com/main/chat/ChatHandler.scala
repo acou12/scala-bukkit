@@ -1,4 +1,4 @@
-package com.ayden.main.chat
+package com.main.chat
 
 import java.util.UUID
 

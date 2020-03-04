@@ -1,8 +1,8 @@
-package com.ayden.main.server
+package com.main.server
 
 import java.io.{ByteArrayOutputStream, DataOutputStream}
 
-import com.ayden.main.MyMainClass
+import com.main.MyMainClass
 import org.bukkit.entity.Player
 
 object BungeeActions {

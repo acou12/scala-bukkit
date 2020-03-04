@@ -1,6 +1,7 @@
-package com.ayden.main.command.commands
+package com.main.command.commands
 
-import com.ayden.main.command.{Command, CommandException}
+import com.ayden.main.command.Command
+import com.main.command.{Command, CommandException}
 import org.bukkit.command.CommandSender
 
 

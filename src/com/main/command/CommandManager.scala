@@ -1,10 +1,11 @@
-package com.ayden.main.command
+package com.main.command
 
 import java.util.logging.Level
 
-import com.ayden.main.MyMainClass
-import com.ayden.main.chat.SmiteCommand
-import com.ayden.main.command.commands.{HelloWorldCommand, KitCommand}
+import com.ayden.main.command.commands.HelloWorldCommand
+import com.main.MyMainClass
+import com.main.chat.SmiteCommand
+import com.main.command.commands.{HelloWorldCommand, KitCommand}
 import org.bukkit.Bukkit
 import org.bukkit.command.{CommandExecutor, CommandSender}
 

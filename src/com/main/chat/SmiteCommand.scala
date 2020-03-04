@@ -1,6 +1,6 @@
-package com.ayden.main.chat
+package com.main.chat
 
-import com.ayden.main.command.Command
+import com.main.command.Command
 import org.bukkit.Bukkit
 import org.bukkit.command.CommandSender
 

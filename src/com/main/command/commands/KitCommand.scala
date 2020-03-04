@@ -1,6 +1,6 @@
-package com.ayden.main.command.commands
+package com.main.command.commands
 
-import com.ayden.main.command.Command
+import com.main.command.Command
 import org.bukkit.Material
 import org.bukkit.Material._
 import org.bukkit.command.CommandSender

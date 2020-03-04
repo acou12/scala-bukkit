@@ -1,9 +1,9 @@
-package com.ayden.main
+package com.main
 
 import java.util
 
-import com.ayden.main.chat.ChatHandler
-import com.ayden.main.command.CommandManager
+import com.main.chat.ChatHandler
+import com.main.command.CommandManager
 import org.bukkit.entity.Player
 import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.plugin.messaging.PluginMessageListener

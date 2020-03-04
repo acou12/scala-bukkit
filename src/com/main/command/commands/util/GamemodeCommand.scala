@@ -1,6 +1,7 @@
-package com.ayden.main.command.commands.util
+package com.main.command.commands.util
 
-import com.ayden.main.command.{Command, CommandException}
+import com.ayden.main.command.Command
+import com.main.command.{Command, CommandException}
 import org.bukkit.Bukkit
 import org.bukkit.GameMode._
 import org.bukkit.command.CommandSender

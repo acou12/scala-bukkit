@@ -1,4 +1,4 @@
-package com.ayden.main.command
+package com.main.command
 
 import org.bukkit.command.CommandSender
 
